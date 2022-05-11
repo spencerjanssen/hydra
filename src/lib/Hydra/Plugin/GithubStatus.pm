@@ -70,6 +70,7 @@ sub common {
                     $seen{$input}->{$key} = 1;
 
                     my $url = "https://api.github.com/repos/$owner/$repo/statuses/$rev";
+                    print STDERR $url;
                     my $req = HTTP::Request->new('POST', $url);
                     $req->header('Content-Type' => 'application/json');
                     $req->header('Accept' => 'application/vnd.github.v3+json');
